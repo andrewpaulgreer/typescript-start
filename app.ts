@@ -21,7 +21,7 @@
 
 
 // with enum
-enum Role { ADMIN=5, READ_ONLY, AUTHOR};
+enum Role { ADMIN=5, READ_ONLY=100, AUTHOR='AUTHOR'};
 
 
 const person = {
