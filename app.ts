@@ -1,47 +1,18 @@
-// tuple
+// union types
 
-// import { string, number } from "prop-types"
-
-//     const person: {
-//         name: string;
-//         age: number;
-//         hobbies: string[];
-//         role: [number, string];
-//     } = {
-//     name: "andrew",
-//     age: 20,
-//     hobbies: ['sports', 'cooking'],
-//     role: [2, 'author']
-// };
-
-//without enum =======================
-// const ADMIN = 0;
-// const READ_ONLY = 1
-// const AUTHOR = 2
-
-
-// with enum
-enum Role { ADMIN=5, READ_ONLY=100, AUTHOR='AUTHOR'};
-
-
-const person = {
-    name: "andrew",
-    age: 20,
-    hobbies: ['sports', 'cooking'],
-    role: Role.ADMIN
-};
-// person.role.push('admin')
-// person.role[1] = 10
-
-let favoriteActivities: string[];
-favoriteActivities = ['sports']
-
-console.log(person.name)
-
-for (const hobby of person.hobbies){
-    console.log(hobby.toUpperCase())
+function combine(input1: number | string, input2: number | string){
+    // if issue with plus pops up it is not entirely correct
+    let result;
+    if(typeof input1 === 'number' && typeof input2 === 'number'){
+        result = input1 + input2
+    } else {
+        result = input1.toString() + input2.toString()
+    }
+    return result
 }
 
-if (person.role === Role.AUTHOR){
-    console.log('is author')
-}
+const combinedAges = combine(30, 26)
+console.log(combinedAges)
+
+const combinedNames = combine('Max', 'Anna')
+console.log(combinedNames)
